@@ -24,5 +24,5 @@ const removeBook = () => ({
   type: REMOVE_BOOK,
 });
 
-export { addBook, removeBook};
+export { addBook, removeBook };
 export default booksReducer;
