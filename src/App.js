@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 
-import Books from './pages/Books';
-import Categories from './pages/Categories';
+import Books from './components/Books';
+import Categories from './components/Categories';
 
 function App() {
   return (
