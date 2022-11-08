@@ -15,7 +15,6 @@ const Book = (props) => {
   const dispatch = useDispatch();
 
   const handleRemove = () => {
-    console.log(id);
     dispatch(removeBook(id));
   };
 
