@@ -9,8 +9,8 @@ li {
 }
 
 header,
-ul,
 form,
+nav > ul,
 .bookStyle {
   display: flex;
   justify-content: space-around;

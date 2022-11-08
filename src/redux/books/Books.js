@@ -1,7 +1,9 @@
+import bookList from './initialBookList';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-const initialState = [];
+const initialState = bookList;
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,12 +18,14 @@ const booksReducer = (state = initialState, action) => {
   }
 };
 
-const addBook = () => ({
+const addBook = (payload) => ({
   type: ADD_BOOK,
+  payload,
 });
 
-const removeBook = () => ({
+const removeBook = (payload) => ({
   type: REMOVE_BOOK,
+  payload,
 });
 
 export { addBook, removeBook };
