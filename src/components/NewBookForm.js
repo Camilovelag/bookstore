@@ -5,7 +5,7 @@ import uuid from 'react-uuid';
 import { addBook } from '../redux/books/Books';
 
 const initialState = {
-  id: null,
+  id: '',
   title: '',
   author: '',
 };
@@ -25,7 +25,6 @@ const NewBookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addBook(newBook));
-    console.log(newBook);
     e.target.reset();
   };
 
