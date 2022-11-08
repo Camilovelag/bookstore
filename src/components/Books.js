@@ -5,10 +5,19 @@ import NewBookForm from './NewBookForm';
 
 const Books = () => {
   const books = useSelector((state) => state.books);
+  const bookList = books.map((book) => (
+    <Book
+      key={book.id}
+      title={book.title}
+      author={book.author}
+    />
+  ));
   return (
     <div>
       <h1>Books</h1>
-      <Book title={books[0].title} author={books[0].author} />
+      <ul>
+        {bookList}
+      </ul>
       <NewBookForm />
     </div>
   );

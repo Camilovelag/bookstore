@@ -10,11 +10,11 @@ const Book = (props) => {
   const { title, author } = props;
 
   return (
-    <div className="bookStyle">
+    <li className="bookStyle">
       <p>{title}</p>
       <p>{author}</p>
       <button type="button">Remove</button>
-    </div>
+    </li>
   );
 };
 
