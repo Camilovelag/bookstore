@@ -16,11 +16,11 @@ const createApp = async () => {
   console.log(data);
 };
 
-const addBooks = async () => {
+const addBooks = async (book) => {
   const url = `${api}/apps/${appId}/books`;
   const response = await fetch(url, {
     method: 'POST',
-    body: JSON.stringify(bookItem),
+    body: JSON.stringify(book),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
