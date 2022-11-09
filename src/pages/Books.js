@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Book from './Book';
-import NewBookForm from './NewBookForm';
+import Book from '../components/Book';
+import NewBookForm from '../components/NewBookForm';
 
 const Books = () => {
   const books = useSelector((state) => state.books);
