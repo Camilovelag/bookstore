@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { asyncGetBooks } from '../redux/books/BooksAsync';
 import Book from '../components/Book';
 import NewBookForm from '../components/NewBookForm';
+import './Books.css';
+import BookProgress from '../components/BookProgress';
+import BookChapter from '../components/BookChapter';
 
 const Books = () => {
   const dispatch = useDispatch();
@@ -13,18 +16,21 @@ const Books = () => {
   }, []);
 
   const bookList = books.map((book) => (
-    <Book
-      key={book.item_id}
-      id={book.item_id}
-      title={book.title}
-      author={book.author}
-      category={book.category}
-    />
+    <div key={book.item_id} className="bookCard-container">
+      <Book
+        id={book.item_id}
+        title={book.title}
+        author={book.author}
+        category={book.category}
+      />
+      <BookProgress />
+      <BookChapter />
+    </div>
   ));
+
   return (
-    <div>
-      <h1>Books</h1>
-      <ul>
+    <div className="books-container">
+      <ul className="books-list">
         {bookList}
       </ul>
       <NewBookForm />
