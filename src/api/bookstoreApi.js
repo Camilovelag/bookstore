@@ -2,12 +2,6 @@ import { loadBooks } from '../redux/books/Books';
 
 const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const appId = 'A5M1SMeOFloqjitxesLY';
-const bookItem = {
-  item_id: 'item1',
-  title: 'The Great Gatsby',
-  author: 'John Smith',
-  category: 'Fiction',
-};
 
 const createApp = async () => {
   const url = `${api}/apps/`;
@@ -46,9 +40,7 @@ const getBooks = async (dispatch) => {
   dispatch(loadBooks(books));
 };
 
-const deleteBooks = async () => {
-  const id = bookItem.item_id;
-
+const deleteBooks = async (id) => {
   const url = `${api}/apps/${appId}/books/${id}`;
   const response = await fetch(url, {
     method: 'DELETE',

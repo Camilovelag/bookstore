@@ -2,26 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
-import { removeBook } from '../redux/books/Books';
+import { asyncDeleteBook } from '../redux/books/BooksAsync';
 
 const Book = (props) => {
   Book.propTypes = {
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
   };
 
-  const { title, author, id } = props;
+  const {
+    id, title, author, category,
+  } = props;
   const dispatch = useDispatch();
 
   const handleRemove = () => {
-    dispatch(removeBook(id));
+    dispatch(asyncDeleteBook(id));
   };
 
   return (
     <li id={id} className="bookStyle">
       <p>{title}</p>
       <p>{author}</p>
+      <p>{category}</p>
       <button type="button" onClick={handleRemove}>Remove</button>
     </li>
   );

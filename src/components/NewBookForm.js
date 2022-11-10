@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
-import { addBook } from '../redux/books/Books';
 
-// import { addBook } from '../redux/books/Books';
 import asyncAddBook from '../redux/books/BooksAsync';
 
 const initialState = {
@@ -28,7 +26,6 @@ const NewBookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(asyncAddBook(newBook));
-    dispatch(addBook(newBook));
     e.target.reset();
   };
 
