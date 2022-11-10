@@ -22,7 +22,6 @@ header {
 .navbar-links {
   padding: 0 2.56rem;
   gap: 2.56rem;
-  flex-wrap: wrap;
 }
 
 .navbar-links > li {
@@ -32,4 +31,43 @@ header {
 
 a {
   text-decoration: none;
+}
+
+.navbar-user {
+  position: absolute;
+  right: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #e8e8e8;
+  border-radius: 50%;
+  padding: 14px;
+}
+
+.navbar-user svg {
+  width: 17px;
+  height: 17px;
+  filter: brightness(0) saturate(100%) invert(62%) sepia(65%) saturate(7382%) hue-rotate(189deg) brightness(104%) contrast(104%);;
+}
+
+@media screen and (max-width: 950px) {
+  header,
+  nav,
+  ul {
+    flex-direction: column;
+  }
+
+  .navbar-user {
+    position: relative;
+    right: 0;
+  }
+
+  nav {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
 }

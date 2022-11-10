@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import { BsFillPersonFill } from 'react-icons/bs';
 
 import createApp from '../api/bookstoreApi';
 
@@ -17,8 +18,10 @@ const Navbar = () => (
         </li>
       </ul>
       <button type="button" style={{ display: 'none' }} onClick={createApp}>create app</button>
-
     </nav>
+    <div className="navbar-user">
+      <BsFillPersonFill />
+    </div>
   </header>
 );
 

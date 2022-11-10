@@ -9,7 +9,7 @@
 }
 
 .newBookForm-container > h2 {
-  margin: 1.813rem 32.75rem 1.188rem 0;
+  margin: 1.813rem 0 1.188rem 0;
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: -0.18px;
@@ -47,4 +47,14 @@
   letter-spacing: 0.5px;
   text-align: center;
   color: #fff;
+}
+
+@media screen and (max-width: 1080px) {
+  .newBookForm-form {
+    flex-direction: column;
+  }
+
+  .newBookForm-form > input {
+    min-width: 12rem;
+  }
 }
