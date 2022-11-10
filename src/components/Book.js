@@ -29,7 +29,11 @@ const Book = (props) => {
       <p className="book-category">{category}</p>
       <p className="book-title">{title}</p>
       <p className="book-author">{author}</p>
-      <button type="button" onClick={handleRemove}>Remove</button>
+      <div className="book-actions">
+        <button type="button">Comment</button>
+        <button type="button" onClick={handleRemove}>Remove</button>
+        <button type="button">Edit</button>
+      </div>
     </li>
   );
 };
