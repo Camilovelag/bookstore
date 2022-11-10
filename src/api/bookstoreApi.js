@@ -9,10 +9,12 @@ const createApp = async () => {
     method: 'POST',
   });
   const data = await response.text();
-  console.log(data);
+  // Needed number to create app
+  console.log(data); // eslint-disable-line
+  return data;
 };
 
-const addBooks = async (book) => {
+const apiAddBooks = async (book) => {
   const url = `${api}/apps/${appId}/books`;
   const response = await fetch(url, {
     method: 'POST',
@@ -24,10 +26,10 @@ const addBooks = async (book) => {
     credentials: 'same-origin',
   });
   const data = await response.text();
-  console.log(data);
+  return data;
 };
 
-const getBooks = async (dispatch) => {
+const apiGetBooks = async (dispatch) => {
   const url = `${api}/apps/${appId}/books/`;
   const response = await fetch(url);
   const data = await response.json();
@@ -36,11 +38,11 @@ const getBooks = async (dispatch) => {
     temp.item_id = key;
     return temp;
   });
-  console.log(books);
   dispatch(loadBooks(books));
+  return books;
 };
 
-const deleteBooks = async (id) => {
+const apiDeleteBooks = async (id) => {
   const url = `${api}/apps/${appId}/books/${id}`;
   const response = await fetch(url, {
     method: 'DELETE',
@@ -51,8 +53,8 @@ const deleteBooks = async (id) => {
     credentials: 'same-origin',
   });
   const data = await response.text();
-  console.log(data);
+  return data;
 };
 
 export default createApp;
-export { getBooks, addBooks, deleteBooks };
+export { apiAddBooks, apiGetBooks, apiDeleteBooks };

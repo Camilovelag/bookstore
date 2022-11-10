@@ -1,24 +1,24 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { addBooks, deleteBooks, getBooks } from '../../api/bookstoreApi';
+import { apiAddBooks, apiGetBooks, apiDeleteBooks } from '../../api/bookstoreApi';
 
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
-const GET_BOOKS = 'bookstore/books/GET_BOOKS';
+const ASYNC_ADD_BOOK = 'bookstore/books/ASYNC_ADD_BOOK';
+const ASYNC_DELETE_BOOK = 'bookstore/books/ASYNC_DELETE_BOOK';
+const ASYNC_GET_BOOKS = 'bookstore/books/ASYNC_GET_BOOKS';
 
 const asyncAddBook = createAsyncThunk(
-  ADD_BOOK,
-  addBooks,
+  ASYNC_ADD_BOOK,
+  apiAddBooks,
 );
 
 const asyncGetBooks = createAsyncThunk(
-  GET_BOOKS,
-  getBooks,
+  ASYNC_GET_BOOKS,
+  apiGetBooks,
 );
 
 const asyncDeleteBook = createAsyncThunk(
-  DELETE_BOOK,
-  deleteBooks,
+  ASYNC_DELETE_BOOK,
+  apiDeleteBooks,
 );
 
 export default asyncAddBook;

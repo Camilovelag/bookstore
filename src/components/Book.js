@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { asyncDeleteBook } from '../redux/books/BooksAsync';
+import { deleteBook } from '../redux/books/Books';
 
 const Book = (props) => {
   Book.propTypes = {
@@ -19,6 +20,7 @@ const Book = (props) => {
 
   const handleRemove = () => {
     dispatch(asyncDeleteBook(id));
+    dispatch(deleteBook(id));
   };
 
   return (
