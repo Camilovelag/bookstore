@@ -9,8 +9,6 @@ const createApp = async () => {
     method: 'POST',
   });
   const data = await response.text();
-  // Needed number to create app
-  console.log(data); // eslint-disable-line
   return data;
 };
 
