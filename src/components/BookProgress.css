@@ -26,3 +26,10 @@
   opacity: 0.5;
   font-size: 0.875rem;
 }
+
+@media screen and (max-width: 1312px) {
+  .bookProgress-container {
+    border: none;
+  }
+}
+  
