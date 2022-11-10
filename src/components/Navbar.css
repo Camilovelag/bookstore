@@ -47,7 +47,7 @@ a {
 .navbar-user svg {
   width: 17px;
   height: 17px;
-  filter: brightness(0) saturate(100%) invert(62%) sepia(65%) saturate(7382%) hue-rotate(189deg) brightness(104%) contrast(104%);;
+  filter: brightness(0) saturate(100%) invert(62%) sepia(65%) saturate(7382%) hue-rotate(189deg) brightness(104%) contrast(104%);
 }
 
 @media screen and (max-width: 950px) {
