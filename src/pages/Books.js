@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { asyncGetBooks } from '../redux/books/BooksAsync';
 import Book from '../components/Book';
 import NewBookForm from '../components/NewBookForm';
+import './Books.css';
 
 const Books = () => {
   const dispatch = useDispatch();
@@ -22,9 +23,8 @@ const Books = () => {
     />
   ));
   return (
-    <div>
-      <h1>Books</h1>
-      <ul>
+    <div className="books-container">
+      <ul className="books-list">
         {bookList}
       </ul>
       <NewBookForm />

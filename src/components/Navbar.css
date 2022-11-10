@@ -1,0 +1,35 @@
+header * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header,
+nav,
+ul {
+  display: flex;
+}
+
+header {
+  background-color: #fff;
+  align-items: center;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+}
+
+.navbar-title {
+  font-weight: bold;
+  color: #0290ff;
+}
+
+.navbar-links {
+  padding: 0 2.56rem;
+  gap: 2.56rem;
+  flex-wrap: wrap;
+}
+
+.navbar-links > li {
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+}
+
+a {
+  text-decoration: none;
+}

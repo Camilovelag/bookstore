@@ -1,0 +1,13 @@
+.books-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2.3rem 6.25rem 16.6rem;
+}
+
+.books-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.938rem;
+  padding-bottom: 2.5rem;
+  border-bottom: solid 1px #e8e8e8;;
+}

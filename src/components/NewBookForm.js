@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
-import { addBook } from '../redux/books/Books';
 
+import { addBook } from '../redux/books/Books';
 import asyncAddBook from '../redux/books/BooksAsync';
+import './NewBookForm.css';
 
 const initialState = {
   item_id: '',
@@ -32,12 +33,12 @@ const NewBookForm = () => {
   };
 
   return (
-    <div>
-      <h2>Add a new book</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="title" onChange={handleChange} placeholder="Book title" />
-        <input type="text" name="author" onChange={handleChange} placeholder="Book author" />
-        <input type="text" name="category" onChange={handleChange} placeholder="Book category" />
+    <div className="newBookForm-container">
+      <h2>ADD NEW BOOK</h2>
+      <form className="newBookForm-form" onSubmit={handleSubmit}>
+        <input type="text" name="title" onChange={handleChange} placeholder="Book title" required />
+        <input type="text" name="author" onChange={handleChange} placeholder="Book author" required />
+        <input type="text" name="category" onChange={handleChange} placeholder="Book category" required />
         <button type="submit">ADD BOOK</button>
       </form>
     </div>

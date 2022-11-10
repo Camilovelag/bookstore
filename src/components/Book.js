@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { asyncDeleteBook } from '../redux/books/BooksAsync';
 import { deleteBook } from '../redux/books/Books';
+import './Book.css';
 
 const Book = (props) => {
   Book.propTypes = {
@@ -24,10 +25,10 @@ const Book = (props) => {
   };
 
   return (
-    <li id={id} className="bookStyle">
-      <p>{title}</p>
-      <p>{author}</p>
-      <p>{category}</p>
+    <li id={id} className="book-container">
+      <p className="book-category">{category}</p>
+      <p className="book-title">{title}</p>
+      <p className="book-author">{author}</p>
       <button type="button" onClick={handleRemove}>Remove</button>
     </li>
   );
