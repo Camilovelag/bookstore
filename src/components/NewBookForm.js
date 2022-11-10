@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
-
 import { addBook } from '../redux/books/Books';
 
+import asyncAddBook from '../redux/books/BooksAsync';
+
 const initialState = {
-  id: '',
+  item_id: '',
   title: '',
   author: '',
+  category: '',
 };
 
 const NewBookForm = () => {
@@ -18,12 +20,13 @@ const NewBookForm = () => {
     setNewBook({
       ...newBook,
       [e.target.name]: e.target.value,
-      id: uuid(),
+      item_id: uuid(),
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(asyncAddBook(newBook));
     dispatch(addBook(newBook));
     e.target.reset();
   };
@@ -34,6 +37,7 @@ const NewBookForm = () => {
       <form onSubmit={handleSubmit}>
         <input type="text" name="title" onChange={handleChange} placeholder="Book title" />
         <input type="text" name="author" onChange={handleChange} placeholder="Book author" />
+        <input type="text" name="category" onChange={handleChange} placeholder="Book category" />
         <button type="submit">ADD BOOK</button>
       </form>
     </div>
