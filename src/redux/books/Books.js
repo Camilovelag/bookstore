@@ -1,12 +1,14 @@
-import bookList from './initialBookList';
-
+const LOAD_BOOK = 'bookstore/books/LOAD_BOOK';
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-const initialState = bookList;
+const initialState = [];
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOAD_BOOK:
+      return action.payload;
+
     case ADD_BOOK:
       return [...state, action.payload];
 
@@ -23,10 +25,15 @@ const addBook = (payload) => ({
   payload,
 });
 
+const loadBooks = (payload) => ({
+  type: LOAD_BOOK,
+  payload,
+});
+
 const removeBook = (payload) => ({
   type: REMOVE_BOOK,
   payload,
 });
 
-export { addBook, removeBook };
+export { loadBooks, removeBook, addBook };
 export default booksReducer;

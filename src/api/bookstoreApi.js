@@ -1,3 +1,5 @@
+import { loadBooks } from '../redux/books/Books';
+
 const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const appId = 'A5M1SMeOFloqjitxesLY';
 const bookItem = {
@@ -31,11 +33,17 @@ const addBooks = async (book) => {
   console.log(data);
 };
 
-const getBooks = async () => {
+const getBooks = async (dispatch) => {
   const url = `${api}/apps/${appId}/books/`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
+  const books = Object.keys(data).map((key) => {
+    const temp = data[key][0];
+    temp.item_id = key;
+    return temp;
+  });
+  console.log(books);
+  dispatch(loadBooks(books));
 };
 
 const deleteBooks = async () => {
